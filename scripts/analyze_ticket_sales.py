@@ -11,7 +11,8 @@ def query_popular_tickets(connection):
             ), 
 
             event_ranks AS (
-                SELECT event_name, num_events,
+                SELECT event_name, 
+                       num_events,
 					   RANK () OVER (ORDER BY num_events) AS event_rank
                 FROM events
             )
